@@ -1,0 +1,22 @@
+<div class="login-container">
+    <div class="login-left">
+      <h2>Login! 👋</h2>
+      <p>How do I get started?</p>
+      <button class="btn btn-google">Sign in with Google</button>
+      <!--<button class="btn btn-apple">Sign in with Apple</button>-->
+      <p>or Login with UserName</p>
+      <form #loginForm="ngForm" (ngSubmit)="login()" class="d-flex" autocomplete="off">
+        <label for="username">User Name</label>
+        <input type="text" id="username" name="username" placeholder="username">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="******">
+        <button type="submit" class="btn btn-signin">Sign In</button>
+      </form>
+      <p>
+        Don't have an account? <button (click)="redirect()"> Sign Up</button>
+      </p>
+  
+  
+    </div>
+  </div> 
+  
