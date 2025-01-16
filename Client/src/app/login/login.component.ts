@@ -24,11 +24,18 @@ export class LoginComponent implements OnInit{
   }
 
   login() {
-    this.accountService.login(this.model).subscribe({
+    this.accountService.login( 
+      // userName: this.model.username,
+      // password: this.model.password
+      this.model
+    ).subscribe({
       next: (Response) => {
         this.router.navigateByUrl('/nav');
+      },
+      error: (error) => {
+      console.error('Login error', error);
       }
-    })
+    });
   }
 
 }

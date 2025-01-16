@@ -7,9 +7,9 @@
       <p>or Login with UserName</p>
       <form #loginForm="ngForm" (ngSubmit)="login()" class="d-flex" autocomplete="off">
         <label for="username">User Name</label>
-        <input type="text" id="username" name="username" placeholder="username">
+        <input [(ngModel)]="model.UserName" type="text" id="username" name="username" placeholder="username">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="******">
+        <input [(ngModel)]="model.Password" type="password" id="password" name="password" placeholder="******">
         <button type="submit" class="btn btn-signin">Sign In</button>
       </form>
       <p>
