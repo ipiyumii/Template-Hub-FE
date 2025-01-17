@@ -1,4 +1,4 @@
-.login-container {
+/* .login-container {
     display: flex;
     height: 100vh;
   }
@@ -89,4 +89,92 @@
       border: 1px solid #ccc;
       border-radius: 4px;
     }
+   */
+
+ /* Register Container */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('../../assets/bg_image.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+form {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2em;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1em;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  color: #000;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4682b4;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4682b4;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+}
+
+button:hover:not(:disabled) {
+  background-color: #005f7f;
+}
+
+.success-message {
+  color: green;
+  font-size: 1em;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  font-size: 1em;
+  margin-top: 10px;
+  text-align: center;
+}
   

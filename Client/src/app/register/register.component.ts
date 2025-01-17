@@ -1,10 +1,11 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountService } from '../_services/account.service';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -13,8 +14,10 @@ export class RegisterComponent implements OnInit{
   model : any = {};
 
   constructor(private router: Router) { }
-
-  ngOnInit() { }
+  
+  ngOnInit() {
+    this.model = {};
+  }
   
   redirect() {
     this.router.navigate(['login']);
@@ -30,5 +33,6 @@ export class RegisterComponent implements OnInit{
       console.error('Login error', error);
       }
     });
+
   }
 }

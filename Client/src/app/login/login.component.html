@@ -1,22 +1,88 @@
 <div class="login-container">
-    <div class="login-left">
-      <h2>Login! 👋</h2>
-      <p>How do I get started?</p>
-      <button class="btn btn-google">Sign in with Google</button>
-      <!--<button class="btn btn-apple">Sign in with Apple</button>-->
-      <p>or Login with UserName</p>
-      <form #loginForm="ngForm" (ngSubmit)="login()" class="d-flex" autocomplete="off">
-        <label for="username">User Name</label>
-        <input [(ngModel)]="model.UserName" type="text" id="username" name="username" placeholder="username">
+    <!-- <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <h2>Login</h2>
+      <div>
+        <label for="username">Username</label>
+        <input id="username" formControlName="username" type="text" required />
+      </div>
+      <div>
         <label for="password">Password</label>
-        <input [(ngModel)]="model.Password" type="password" id="password" name="password" placeholder="******">
-        <button type="submit" class="btn btn-signin">Sign In</button>
-      </form>
-      <p>
-        Don't have an account? <button (click)="redirect()"> Sign Up</button>
-      </p>
-  
-  
+        <input id="password" formControlName="password" type="password" required />
+      </div>
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+      <div class="login-register">
+        <p> Don't have an account? <a (click)="toggleToRegister()" class="register-link" > Register</a></p>
     </div>
+    </form> -->
+    <section id="loginfrom">
+      <div class="wrapper">
+          <div class="form-box login">
+              <h2>Login</h2>
+              <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                  <div class="input-box">
+                      <span class="icon"><i class="bi bi-person-fill"></i></span>
+                      <input type="text" id="username" formControlName ="username"  autocomplete="off" required>
+                      <label>User Name</label>
+                  </div>
+                  <div class="input-box">
+                      <span class="icon"><i class="bi bi-lock-fill"></i></span>
+                      <input type="password" id="password" formControlName="password"  autocomplete="new-password" required>
+                      <label>password</label>
+                  </div>
+                  <div class="remember-forgot">
+                      <label><input type="checkbox"> Remember me</label>
+                      <a href="#">Forgot password?</a>
+                  </div>
+                  <button type="submit" class="btnsubmit" id="btnsubmit" name ="btnsubmit">Login</button>
+
+                  <div class="login-register">
+                      <p> Don't have an account? <a href="#"  (click)="toggleForm()" class="register-link"> Register</a></p>
+                  </div>
+              </form>
+          </div>
+
+          <div class="form-box register" *ngIf="!isLoginForm">
+              <h2>Registration</h2>
+              <form >
+                  <div class="input-box">
+                      <span class="icon"><i class="bi bi-person-fill"></i></span>
+                      <input type="text" id="username" formControlName="username"  autocomplete="off" required>>
+                      <label>User Name</label>
+                  </div>
+                  <div class="input-box">
+                      <span class="icon"><i class="bi bi-envelope-fill"></i></span>
+                      <input type="email" id="email" formControlName="email"  autocomplete="off" required>>
+                      <label>E-mail</label>
+                  </div>
+                  <div class="input-box">
+                      <span class="icon"><i class="bi bi-geo-alt-fill"></i></span>
+                      <input type="text" id="address" formControlName="address" required>
+                      <label>Address</label>
+                  </div>
+                  <div class="input-box"> 
+                      <span class="icon"><i class="bi bi-telephone-fill"></i></span>
+                      <input type="text" id="telephone" formControlName="telephone" required>
+                      <label>Telephone</label>
+                  </div>
+                  <div class="input-box">
+                      <span class="icon"><i class="bi bi-lock-fill"></i></span>
+                      <input type="password" id="password" formControlName=" password" required>
+                      <label>password</label>
+                  </div>
+
+                  <div class="remember-forgot">
+                      <label><input type="checkbox"> Agree to the terms and conditions</label>
+                  </div>
+                  <button type="submit" class="btnsubmit" id ="btnregister" name="btnregister">Register</button>
+
+                  <div class="login-register">
+                      <p> Already have an account? <a href="#" (click)="toggleForm()" class="login-link"> Login</a></p>
+                  </div>
+              </form>
+          </div>
+      </div>
+    </section>
   </div> 
   
